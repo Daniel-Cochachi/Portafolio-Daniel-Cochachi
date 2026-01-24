@@ -2,12 +2,9 @@
 
 :root {
     --bg-color: #0b1120;
-    /* Deep blue-black */
     --card-bg: rgba(15, 23, 42, 0.6);
     --primary-color: #00ff9d;
-    /* Electric Green */
     --secondary-color: #00b8ff;
-    /* Bright Blue */
     --text-color: #f8fafc;
     --text-secondary: #94a3b8;
     --glass-border: rgba(255, 255, 255, 0.05);
@@ -30,7 +27,7 @@ body {
 }
 
 /* Scrollbar Customization */
-/* Scrollbar Customization - Hidden but functional */
+/* Scrollbar */
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent;
@@ -109,15 +106,13 @@ header {
     transform: scaleX(1);
 }
 
-/* Animate Scroll Classes - Enabled */
+/* Animate Scroll Classes */
 .animate-scroll {
     opacity: 0;
     transform: translateY(100px);
     transition: 1s ease;
     transition-delay: calc(.1s * var(--i));
-    /* Faster delays */
     filter: blur(5px);
-    /* Nice touch: blur in */
     will-change: transform, opacity;
 }
 
@@ -692,8 +687,13 @@ section {
 @media (max-width: 768px) {
     .home {
         flex-direction: column;
-        padding-top: 100px;
+        padding-top: 8rem;
+        /* Increased padding to prevent navbar overlap */
         text-align: center;
+        justify-content: center;
+        /* Center content vertically if screen is tall enough */
+        min-height: 100vh;
+        /* Ensure full height */
     }
 
     .portfolio-container {

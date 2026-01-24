@@ -45,24 +45,17 @@ let isDeleting = false;
 
 const typeEffect = () => {
     const currentWord = words[wordIndex];
-
-    // Safety check in case elements are missing
     if (!typingText) return;
-
     const currentChar = currentWord.substring(0, charIndex);
-
     typingText.textContent = currentChar;
 
     if (!isDeleting && charIndex < currentWord.length) {
-        // Typing
         charIndex++;
         setTimeout(typeEffect, 100);
     } else if (isDeleting && charIndex > 0) {
-        // Deleting
         charIndex--;
         setTimeout(typeEffect, 50);
     } else {
-        // Switching state
         isDeleting = !isDeleting;
 
         if (!isDeleting) {
