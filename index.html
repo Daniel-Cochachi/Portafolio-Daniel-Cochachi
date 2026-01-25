@@ -5,15 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio | Daniel</title>
-    <!-- CSS Link -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
 
-    <!-- Header / Navbar -->
+    <!-- Video Background -->
+    <div class="video-bg">
+        <video autoplay loop muted playsinline>
+            <source src="https://www.pexels.com/es-es/download/video/6288130/" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- Header -->
     <header class="header">
         <a href="#" class="logo">Daniel Cochachi</a>
 
@@ -28,7 +34,7 @@
         </nav>
     </header>
 
-    <!-- Home / Hero Section -->
+    <!-- Home Section -->
     <section class="home" id="home">
         <div class="home-content">
             <h3 class="animate-scroll" style="--i:1">Hola, soy</h3>
@@ -49,14 +55,20 @@
             <a href="#contact" class="btn animate-scroll" style="--i:6">Contáctame</a>
         </div>
 
-        <div class="home-img"></div>
+        <div class="home-img"
+            style="background: url('https://wallpapers.com/images/high/gojo-sataru-pthu5e8z7xg9hg1m.webp'); background-size: cover; background-position: center;">
+        </div>
     </section>
 
     <!-- About Section -->
     <section class="about" id="about">
-        <!-- About Image Placeholder -->
         <div class="about-container-flex">
-            <div class="about-text animate-scroll" style="--i:1">
+            <div class="about-img animate-scroll" style="--i:1">
+                <img src="https://wallpapers.com/images/high/choso-blackand-white-portrait-j-j-k-wjnslpp2t0w9869e.webp"
+                    alt="Daniel Gojo B&W">
+            </div>
+
+            <div class="about-text animate-scroll" style="--i:2">
                 <h2 class="heading" style="text-align: left;">Sobre <span>Mí</span></h2>
                 <h3 style="text-align: left;">Soluciones Digitales para Negocios</h3>
                 <p style="text-align: left; margin: 0;">Me dedico a crear <strong>Landing Pages y Sitios Web</strong>
@@ -131,32 +143,33 @@
         <h2 class="heading animate-scroll">Mis <span>Proyectos</span></h2>
 
         <div class="portfolio-container">
-            <!-- Project 1 -->
             <div class="portfolio-box animate-scroll" style="--i:1">
-                <img src="assets/barbershop_hero.png" alt="Royal Barberia">
+                <img src="https://www.xtrafondos.com/wallpapers/satoru-gojo-de-jujutsu-kaisen-11753.jpg"
+                    alt="Barbería Expansion">
                 <div class="portfolio-layer">
-                    <h4>Landing Page Barbería</h4>
-                    <p>Sitio web moderno y responsive para una barbería exlusiva.</p>
+                    <h4>Landing Page: Barbería</h4>
+                    <p>Un sitio web con técnica impecable y diseño letal para negocios exclusivos.</p>
                     <a href="https://daniel-cochachi.github.io/Landing-Page-Barberia/" target="_blank"><i
                             class='bx bx-link-external'></i></a>
                 </div>
             </div>
-
-            <!-- Project 2 -->
             <div class="portfolio-box animate-scroll" style="--i:2">
-                <img src="https://via.placeholder.com/350x250/0b1120/00ff9d?text=Próximamente" alt="Próximamente">
+                <img src="https://w0.peakpx.com/wallpaper/668/821/HD-wallpaper-anime-jujutsu-kaisen-yuta-okkotsu.jpg"
+                    alt="Proximamente...">
                 <div class="portfolio-layer">
-                    <h4>Próximamente</h4>
-                    <p>Nuevo proyecto en proceso de desarrollo.</p>
+                    <h4>Proximamente...</h4>
+                    <p>Proximamente...
+                    </p>
+                    <a href="#"><i class='bx bx-code-alt'></i></a>
                 </div>
             </div>
-
-            <!-- Project 3 -->
             <div class="portfolio-box animate-scroll" style="--i:3">
-                <img src="https://via.placeholder.com/350x250/0b1120/00b8ff?text=Próximamente" alt="Próximamente">
+                <img src="https://www.xtrafondos.com/wallpapers/sukuna-de-jujutsu-kaisen-7462.jpg"
+                    alt="Proximamente...">
                 <div class="portfolio-layer">
-                    <h4>Próximamente</h4>
-                    <p>Nuevo proyecto en proceso de desarrollo.</p>
+                    <h4>Proximamente...</h4>
+                    <p>Proximamente...</p>
+                    <a href="#"><i class='bx bxs-data'></i></a>
                 </div>
             </div>
         </div>
