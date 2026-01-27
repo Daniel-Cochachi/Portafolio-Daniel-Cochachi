@@ -247,6 +247,35 @@ header.sticky {
         0 0 40px var(--secondary-color);
 }
 
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: none;
+    margin-left: 1.5rem;
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 20px var(--primary-color);
+}
+
+.home-btns, .about-btns {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 30px;
+}
+
+.about-btns {
+    margin-top: 1rem;
+}
+
+.home-btns .btn, .about-btns .btn {
+    margin-top: 0;
+}
+
 /* Glow Circle Background */
 .home::before {
     content: '';
