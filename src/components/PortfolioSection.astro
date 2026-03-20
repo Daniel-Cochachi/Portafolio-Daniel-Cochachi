@@ -77,7 +77,7 @@ const projects = [
             style={`animation-delay: ${index * 0.1}s; --accent: var(--color-orange)`}
           >
             <div class="project-image">
-              <img src={project.image} alt={project.title} loading="lazy" />
+              <img src={project.image.src} alt={project.title} loading="lazy" />
               <div class="project-overlay project-overlay-orange">
                 <a
                   href={project.link}
