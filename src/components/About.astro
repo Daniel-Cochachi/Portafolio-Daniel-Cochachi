@@ -1,5 +1,5 @@
----
 import { Icon } from 'astro-icon/components';
+import profileImg from "../assets/foto-perfil.avif";
 
 const stats = [
   { label: 'Proyectos Propios', value: '7+' },
@@ -14,7 +14,7 @@ const stats = [
       <!-- Left: Image & Stats -->
       <div class="about-visual fade-up">
         <div class="image-card">
-          <img src="/src/assets/foto-perfil.avif" alt="Sobre Daniel" class="about-img" />
+          <img src={profileImg.src} alt="Sobre Daniel" class="about-img" />
         </div>
         
         <div class="stats-mini-grid">

@@ -1,5 +1,5 @@
----
 import { Icon } from 'astro-icon/components';
+import profileImg from "../assets/foto-perfil.avif";
 ---
 <section class="hero" id="home">
   <div class="container hero-inner">
@@ -18,7 +18,7 @@ import { Icon } from 'astro-icon/components';
       <div class="image-wrapper">
         <div class="bg-circle-glow"></div>
         <div class="profile-circle">
-          <img src="/src/assets/foto-perfil.avif" alt="Daniel Cochachi" class="hero-img" />
+          <img src={profileImg.src} alt="Daniel Cochachi" class="hero-img" />
         </div>
         
         <div class="tech-badge-hero shimmer">
