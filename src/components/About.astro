@@ -1,0 +1,234 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const stats = [
+  { label: 'Proyectos Propios', value: '7+' },
+  { label: 'Tecnologías', value: '8+' },
+  { label: 'Ubicación', value: 'Perú' },
+];
+---
+
+<section class="about section-padding" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Left: Image & Stats -->
+      <div class="about-visual fade-up">
+        <div class="image-card">
+          <img src="/src/assets/foto-perfil.avif" alt="Sobre Daniel" class="about-img" />
+        </div>
+        
+        <div class="stats-mini-grid">
+          {stats.map(stat => (
+            <div class="stat-item">
+              <span class="stat-value">{stat.value}</span>
+              <span class="stat-label">{stat.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right: Content -->
+      <div class="about-content fade-up-d1">
+        <span class="section-tag section-tag-pink">Sobre Mí</span>
+        <h2 class="section-title">Soy un Desarrollador que<br/><span class="text-gradient-pink">le apasiona programar</span></h2>
+        
+        <p class="bio">
+          Me especializo en construir soluciones digitales atractivas y funcionales, combinando el **Desarrollo Full Stack** con la **Inteligencia Artificial** para crear experiencias únicas.
+        </p>
+        
+        <p class="bio-secondary">
+          Mi enfoque se centra en el aprendizaje continuo y la implementación de las últimas tecnologías. Aunque estoy iniciando mi camino profesional, mi pasión por el código y la resolución de problemas me impulsa a entregar resultados de alta calidad en cada proyecto.
+        </p>
+
+        <div class="personal-info">
+          <div class="info-row">
+            <span class="label">Nombre:</span>
+            <span class="value">Daniel Cochachi</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Ubicación:</span>
+            <span class="value">Lima, Perú</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Estudios:</span>
+            <span class="value">Computacion e Informatica</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Teléfonos:</span>
+            <span class="value">992 530 367 / 930 531 329</span>
+          </div>
+        </div>
+
+        <div class="about-actions">
+          <a href="#contact" class="btn btn-pink">Contáctame</a>
+          <div class="social-minimal">
+            <a href="https://github.com/Daniel-Cochachi" target="_blank" class="social-link"><Icon name="lucide:github" /></a>
+            <a href="https://linkedin.com/in/daniel-armando-cochachi-pariona-263919227" target="_blank" class="social-link"><Icon name="lucide:linkedin" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  /* Left Visuals */
+  .about-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .image-card {
+    position: relative;
+    border-radius: 30px;
+    background: var(--bg-card);
+    padding: 15px;
+    border: 1px solid var(--border);
+    transition: transform 0.4s ease;
+  }
+
+  .about-img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    filter: grayscale(30%);
+    transition: filter 0.4s ease;
+  }
+
+  .image-card:hover .about-img {
+    filter: grayscale(0%);
+  }
+
+  .stats-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .stat-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: white;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  /* Right Content */
+  .section-tag-pink {
+    color: var(--color-pink);
+  }
+
+  .text-gradient-pink {
+    background: linear-gradient(90deg, var(--color-pink), #ec4899);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 2.5rem;
+  }
+
+  .bio {
+    font-size: 1.25rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .bio-secondary {
+    color: var(--text-dim);
+    margin-bottom: 3rem;
+  }
+
+  .personal-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .info-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .info-row .label {
+    font-size: 0.8rem;
+    color: var(--color-pink);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .info-row .value {
+    color: white;
+    font-weight: 500;
+  }
+
+  .about-actions {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .btn-pink {
+    background: linear-gradient(135deg, var(--color-pink), #ec4899);
+    color: white;
+    box-shadow: 0 10px 20px rgba(244, 114, 182, 0.2);
+    padding: 1rem 2.5rem;
+    border-radius: 100px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.4s ease;
+  }
+
+  .btn-pink:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(244, 114, 182, 0.4);
+  }
+
+  .social-minimal {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .social-link {
+    font-size: 1.4rem;
+    color: var(--text-dim);
+    transition: color 0.3s ease;
+  }
+
+  .social-link:hover {
+    color: var(--color-pink);
+  }
+
+  @media (max-width: 992px) {
+    .about-grid { grid-template-columns: 1fr; gap: 5rem; }
+    .personal-info { grid-template-columns: 1fr; }
+  }
+</style>

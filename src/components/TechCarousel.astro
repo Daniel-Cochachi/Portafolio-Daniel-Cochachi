@@ -1,0 +1,160 @@
+---
+const technologies = [
+  { name: "HTML5", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
+  { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
+  { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+  { name: "Astro", logo: "https://astro.build/favicon.svg" },
+  { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
+  { name: "Spring Boot", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" },
+  { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
+  { name: "GitHub", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" },
+  { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" },
+  { name: "SQL Server", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg" }
+];
+
+// Duplicate the list for seamless infinite scroll
+const displayTechs = [...technologies, ...technologies, ...technologies, ...technologies];
+---
+
+<section class="tech-carousel-section">
+  <div class="carousel-container">
+    <div class="carousel-track">
+      {displayTechs.map((tech) => (
+        <div class="tech-card">
+          <div class="icon-wrapper">
+            <img src={tech.logo} alt={tech.name} loading="lazy" />
+          </div>
+          <span class="tech-name">{tech.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .tech-carousel-section {
+    padding: 4rem 0;
+    background: transparent;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Gradient overlays for the edges */
+  .tech-carousel-section::before,
+  .tech-carousel-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .tech-carousel-section::before {
+    left: 0;
+    background: linear-gradient(to right, #020617 0%, transparent 100%);
+  }
+
+  .tech-carousel-section::after {
+    right: 0;
+    background: linear-gradient(to left, #020617 0%, transparent 100%);
+  }
+
+  .carousel-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 4rem;
+    padding: 1rem 0;
+    animation: scroll 40s linear infinite;
+    width: max-content;
+  }
+
+  .tech-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    min-width: 120px;
+    transition: all 0.3s ease;
+    cursor: default;
+  }
+
+  .tech-card:hover {
+    transform: translateY(-10px) scale(1.1);
+  }
+
+  .icon-wrapper {
+    width: 70px;
+    height: 70px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .tech-card:hover .icon-wrapper {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .icon-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(1) opacity(0.6);
+    transition: all 0.4s ease;
+  }
+
+  .tech-card:hover .icon-wrapper img {
+    filter: grayscale(0) opacity(1);
+  }
+
+  .tech-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+  }
+
+  .tech-card:hover .tech-name {
+    color: white;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-120px * 10 - 4rem * 10));
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    .tech-card {
+      min-width: 100px;
+    }
+    .carousel-track {
+      gap: 2.5rem;
+    }
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-100px * 10 - 2.5rem * 10));
+      }
+    }
+  }
+</style>

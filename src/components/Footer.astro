@@ -1,0 +1,102 @@
+---
+import { Icon } from 'astro-icon/components';
+const currentYear = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-left">
+      <a href="#home" class="footer-logo">
+        <span class="logo-text">Daniel <span class="accent-dot">.</span></span>
+      </a>
+      <p class="copyright">© {currentYear} Daniel Cochachi. Todos los derechos reservados.</p>
+    </div>
+
+    <div class="footer-right">
+      <div class="social-links">
+        <a href="https://github.com/Daniel-Cochachi" target="_blank" class="social-icon social-icon-cyan" aria-label="GitHub">
+          <Icon name="lucide:github" />
+        </a>
+        <a href="https://linkedin.com/in/daniel-armando-cochachi-pariona-263919227" target="_blank" class="social-icon social-icon-pink" aria-label="LinkedIn">
+          <Icon name="lucide:linkedin" />
+        </a>
+        <a href="https://www.facebook.com/danielo.cochachi/" target="_blank" class="social-icon social-icon-emerald" aria-label="Facebook">
+          <Icon name="lucide:facebook" />
+        </a>
+        <a href="https://www.instagram.com/dan.pcxd/" target="_blank" class="social-icon social-icon-orange" aria-label="Instagram">
+          <Icon name="lucide:instagram" />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #020617;
+    padding: 6rem 0 4rem;
+    border-top: 1px solid var(--border);
+    margin-top: 4rem;
+  }
+
+  .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    text-decoration: none;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+
+  .logo-text {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .accent-dot {
+    color: var(--color-cyan);
+  }
+
+  .copyright {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  .social-icon {
+    font-size: 1.3rem;
+    color: var(--text-dim);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+  }
+
+  .social-icon-cyan:hover { color: var(--color-cyan); border-color: var(--color-cyan); background: rgba(0, 210, 255, 0.05); }
+  .social-icon-pink:hover { color: var(--color-pink); border-color: var(--color-pink); background: rgba(244, 114, 182, 0.05); }
+  .social-icon-emerald:hover { color: var(--color-emerald); border-color: var(--color-emerald); background: rgba(16, 185, 129, 0.05); }
+  .social-icon-orange:hover { color: var(--color-orange); border-color: var(--color-orange); background: rgba(251, 146, 60, 0.05); }
+
+  .social-icon:hover {
+    transform: translateY(-8px) scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid { flex-direction: column; text-align: center; gap: 3rem; }
+  }
+</style>

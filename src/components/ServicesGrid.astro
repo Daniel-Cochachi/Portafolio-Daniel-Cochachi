@@ -1,0 +1,138 @@
+---
+const services = [
+  {
+    id: "responsive",
+    title: "Sitios Web Responsivos",
+    icon: "lucide:smartphone",
+    description: "Interfaces fluidas y modernas con Astro, HTML, CSS y JavaScript que se adaptan a cualquier dispositivo.",
+  },
+  {
+    id: "backend",
+    title: "Sistemas Back-End",
+    icon: "lucide:server",
+    description: "Arquitecturas eficientes y seguras desarrolladas con Java y el framework Spring Boot.",
+  },
+  {
+    id: "landing",
+    title: "Landing Pages",
+    icon: "lucide:rocket",
+    description: "Páginas de alta conversión optimizadas para captar la atención de tus clientes con diseño premium.",
+  },
+  {
+    id: "corporate",
+    title: "Web Corporativa",
+    icon: "lucide:building-2",
+    description: "Presencia digital profesional para tu negocio con enfoque en velocidad, SEO y diseño moderno."
+  },
+  {
+    icon: "lucide:sparkles",
+    title: "Desarrollo Asistido por IA",
+    description: "Uso de herramientas de Inteligencia Artificial para acelerar el desarrollo y mejorar la calidad del código."
+  },
+  {
+    icon: "lucide:github",
+    title: "Control de Versiones",
+    description: "Gestión profesional de proyectos utilizando GitHub para asegurar la integridad y colaboración del código."
+  }
+];
+
+import { Icon } from 'astro-icon/components';
+---
+<section class="services section-padding" id="services">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <span class="section-tag section-tag-red">Servicios</span>
+      <h2 class="section-title">Lo que hago por mis <span class="text-gradient-red">Clientes</span></h2>
+    </div>
+
+    <div class="services-grid">
+      {services.map((service, index) => (
+        <div class="service-card fade-up" style={`animation-delay: ${index * 0.1}s`}>
+          <div class="service-icon service-icon-red">
+            <Icon name={service.icon} />
+          </div>
+          <h3 class="service-title">{service.title}</h3>
+          <p class="service-desc">{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .service-card {
+    background: var(--bg-card);
+    padding: 3rem 2.5rem;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card:hover {
+    transform: translateY(-12px);
+    border-color: var(--color-red);
+    background: rgba(239, 68, 68, 0.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .service-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(239, 68, 68, 0.08);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-red);
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(239, 68, 68, 0.1);
+  }
+
+  .service-card:hover .service-icon {
+    background: linear-gradient(135deg, var(--color-red), #b91c1c);
+    color: white;
+    transform: rotate(-8deg) scale(1.1);
+    box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3);
+  }
+
+  .service-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    color: white;
+    font-weight: 700;
+  }
+
+  .service-desc {
+    color: var(--text-dim);
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+
+  .section-tag-red {
+    color: var(--color-red);
+  }
+
+  .text-gradient-red {
+    background: linear-gradient(90deg, var(--color-red), #dc2626);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-center { text-align: center; }
+  .mb-5 { margin-bottom: 4rem; }
+
+  @media (max-width: 768px) {
+    .services-grid { grid-template-columns: 1fr; }
+  }
+</style>

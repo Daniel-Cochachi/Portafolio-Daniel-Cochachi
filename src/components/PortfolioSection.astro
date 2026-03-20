@@ -1,0 +1,268 @@
+---
+const projects = [
+  {
+    id: 1,
+    title: "Corporación Raunass",
+    description:
+      "Plataforma web integral para servicios de ingeniería y construcción.",
+    image: "/src/assets/CorporaciónRaunass.avif",
+    link: "https://corporacionraunass.com/",
+    tags: ["HTML", "CSS", "JS","Astro"],
+    color: "#00D2FF",
+  },
+  {
+    id: 2,
+    title: "Sistema de Inventario",
+    description:
+      "Sistema de gestión de inventarios con reportes en tiempo real y control de stock.",
+    image: "/src/assets/sistema-inventario-backend.webp",
+    link: "https://github.com/Daniel-Cochachi/Inventory-System",
+    tags: ["Java", "Spring Boot", "MySQL","GitHub"],
+    color: "#9D50BB",
+  },
+  {
+    id: 3,
+    title: "Appex Gym",
+    description:
+      "Landing page para gimnasio con sistema de membresías y diseño dinámico.",
+    image: "/src/assets/appexgym.avif",
+    link: "https://appexgym.netlify.app/",
+    tags: ["HTML", "CSS", "JS","Astro"],
+    color: "#FDC830",
+  },
+  {
+    id: 4,
+    title: "Landing Page Florería",
+    description:
+      "Sitio web elegante para florería con catálogo de productos y carrito visual.",
+    image: "/src/assets/lading-floreria.avif",
+    link: "https://landing-floreria-xi.vercel.app/",
+    tags: ["HTML", "CSS","JS", "Responsivo"],
+    color: "#00F260",
+  },
+  {
+    id: 5,
+    title: "E-commerce Rest API",
+    description:
+      "API RESTful robusta para comercio electrónico con autenticación, gestión de carritos y procesamiento de pedidos.",
+    image: "/src/assets/ecomerce-back-end.webp",
+    link: "https://github.com/Daniel-Cochachi/Ecommerce-Rest-API",
+    tags: ["Java", "Spring Boot", "MySQL", "Security"],
+    color: "#FF8C00",
+  },
+];
+---
+
+<section class="portfolio section-padding" id="portfolio">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <span class="section-tag section-tag-orange">Portafolio</span>
+      <h2 class="section-title">
+        Algunos de mis <span class="text-gradient-orange"
+          >Mejores Trabajos</span>
+      </h2>
+    </div>
+
+    <div class="projects-grid">
+      {
+        projects.map((project, index) => (
+          <div
+            class="project-card fade-up"
+            style={`animation-delay: ${index * 0.1}s; --accent: var(--color-orange)`}
+          >
+            <div class="project-image">
+              <img src={project.image} alt={project.title} loading="lazy" />
+              <div class="project-overlay project-overlay-orange">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  class="view-btn view-btn-orange"
+                >
+                  Ver Detalles
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="tags">
+                {project.tags.map((tag) => (
+                  <span class="tag tag-orange">{tag}</span>
+                ))}
+              </div>
+              <h3 class="project-title">{project.title}</h3>
+              <p class="project-desc">{project.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+
+  .project-card {
+    background: var(--bg-card);
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .project-card:hover {
+    transform: translateY(-15px);
+    border-color: var(--color-orange);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  .project-image {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .project-card:hover .project-image img {
+    transform: scale(1.1);
+  }
+
+  .project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+  }
+
+  .project-overlay-orange {
+    background: linear-gradient(to top, rgba(251, 146, 60, 0.4), transparent);
+  }
+
+  .project-card:hover .project-overlay {
+    opacity: 1;
+  }
+
+  .view-btn {
+    padding: 1rem 2rem;
+    background: white;
+    color: var(--bg-dark);
+    text-decoration: none;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transform: translateY(20px);
+    transition: all 0.4s ease 0.1s;
+  }
+
+  .view-btn-orange:hover {
+    background: var(--color-orange);
+    color: white;
+  }
+
+  .project-card:hover .view-btn {
+    transform: translateY(0);
+  }
+
+  .project-info {
+    padding: 2.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tags {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 5px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 100px;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+
+  .tag-orange {
+    color: var(--color-orange);
+  }
+
+  .project-card:hover .tag {
+    border-color: var(--color-orange);
+    background: rgba(251, 146, 60, 0.1);
+  }
+
+  .project-title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-weight: 800;
+  }
+
+  .project-desc {
+    color: var(--text-dim);
+    line-height: 1.7;
+    font-size: 1rem;
+    margin-bottom: auto;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+  .mb-5 {
+    margin-bottom: 4rem;
+  }
+
+  .section-tag-orange {
+    color: var(--color-orange);
+  }
+
+  .text-gradient-orange {
+    background: linear-gradient(90deg, var(--color-orange), #f97316);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    line-height: 1.1;
+  }
+
+  @media (max-width: 576px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+    .project-image {
+      height: 220px;
+    }
+  }
+</style>
