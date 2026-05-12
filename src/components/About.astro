@@ -9,7 +9,7 @@ const stats = [
 ];
 ---
 
-<section class="about section-padding" id="about">
+<section class="about" id="about">
   <div class="container">
     <div class="about-grid">
       <!-- Left: Image & Stats -->
@@ -31,20 +31,20 @@ const stats = [
       <!-- Right: Content -->
       <div class="about-content fade-up-d1">
         <span class="section-tag section-tag-pink">Sobre Mí</span>
-        <h2 class="section-title">Soy un Desarrollador que<br/><span class="text-gradient-pink">le apasiona programar</span></h2>
+        <h2 class="section-title">Enfocado en <span class="text-gradient-pink">Backend</span> con<br/>complemento <span class="text-gradient-pink">Frontend</span></h2>
         
         <p class="bio">
-          Me especializo en construir soluciones digitales atractivas y funcionales, combinando el **Desarrollo Full Stack** con la **Inteligencia Artificial** para crear experiencias únicas.
+          Soy un desarrollador backend de Perú enfocado en APIs robustas y aplicaciones escalables con **Java, Spring Boot y como gestor de base de datos SQL**. Me apasiona crear sistemas eficientes y optimizados aplicando buenas prácticas de arquitectura.
         </p>
         
         <p class="bio-secondary">
-          Mi enfoque se centra en el aprendizaje continuo y la implementación de las últimas tecnologías. Aunque estoy iniciando mi camino profesional, mi pasión por el código y la resolución de problemas me impulsa a entregar resultados de alta calidad en cada proyecto.
+          Tengo experiencia en proyectos personales desarrollando sistemas de ventas y gestión, manejando herramientas como **Docker, Git y MySQL**, además de conocimientos en frontend para soluciones integrales.
         </p>
 
         <div class="personal-info">
           <div class="info-row">
             <span class="label">Nombre:</span>
-            <span class="value">Daniel Cochachi</span>
+            <span class="value">Daniel Cochachi Pariona</span>
           </div>
           <div class="info-row">
             <span class="label">Ubicación:</span>
@@ -73,6 +73,10 @@ const stats = [
 </section>
 
 <style>
+  .about {
+    padding: clamp(3rem, 6vw, 4rem) 0;
+  }
+
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1.1fr;
@@ -153,23 +157,24 @@ const stats = [
   }
 
   .bio {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: white;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
+    margin-bottom: 1rem;
+    line-height: 1.5;
   }
 
   .bio-secondary {
+    font-size: 0.95rem;
     color: var(--text-dim);
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
   }
 
   .personal-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 3rem;
-    padding-top: 2rem;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-top: 1.5rem;
     border-top: 1px solid var(--border);
   }
 
