@@ -1,13 +1,24 @@
 ---
+import clubreservaImg from "../assets/clubreserva.png";
 import raunassImg from "../assets/CorporaciónRaunass.avif";
-import inventoryImg from "../assets/sistema-inventario-backend.webp";
 import appexImg from "../assets/appexgym.avif";
 import floreriaImg from "../assets/lading-floreria.avif";
-import ecommerceImg from "../assets/ecomerce-back-end.webp";
 
 const projects = [
   {
     id: 1,
+    title: "SaaS E-commerce Club Reserva",
+    description:
+      "Plataforma SaaS integral de e-commerce con panel administrativo, carritos dinámicos y pasarelas de pago.",
+    demoLink: "https://clubreserva.com/yuki",
+    demoText: "Caso de Éxito: Tienda Yuki",
+    image: clubreservaImg,
+    link: "https://clubreserva.com/",
+    tags: ["PHP", "Laravel", "React", "Livewire", "MySQL"],
+    color: "#FF8C00",
+  },
+  {
+    id: 2,
     title: "Corporación Raunass",
     description:
       "Plataforma web integral para servicios de ingeniería y construcción.",
@@ -15,16 +26,6 @@ const projects = [
     link: "https://corporacionraunass.vercel.app",
     tags: ["HTML", "CSS", "JS", "Astro"],
     color: "#00D2FF",
-  },
-  {
-    id: 2,
-    title: "Sistema de Inventario",
-    description:
-      "Sistema de gestión de inventarios con reportes en tiempo real y control de stock.",
-    image: inventoryImg,
-    link: "https://github.com/Daniel-Cochachi/Sistema-de-Inventarios",
-    tags: ["Java", "Spring Boot", "MySQL", "GitHub"],
-    color: "#9D50BB",
   },
   {
     id: 3,
@@ -45,17 +46,7 @@ const projects = [
     link: "https://landing-floreria-xi.vercel.app/",
     tags: ["HTML", "CSS", "JS", "Responsivo"],
     color: "#00F260",
-  },
-  {
-    id: 5,
-    title: "E-commerce Rest API",
-    description:
-      "API RESTful robusta para comercio electrónico con autenticación, gestión de carritos y procesamiento de pedidos.",
-    image: ecommerceImg,
-    link: "https://github.com/Daniel-Cochachi/Daniel-Cochachi-Sistema-Ecommerce-basico-Java-Spring-boot-Back-end",
-    tags: ["Java", "Spring Boot", "MySQL", "Security"],
-    color: "#FF8C00",
-  },
+  }
 ];
 ---
 
@@ -96,6 +87,12 @@ const projects = [
               </div>
               <h3 class="project-title">{project.title}</h3>
               <p class="project-desc">{project.description}</p>
+              {project.demoLink && (
+                <a href={project.demoLink} target="_blank" class="demo-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  {project.demoText}
+                </a>
+              )}
             </div>
           </div>
         ))
@@ -238,6 +235,22 @@ const projects = [
     line-height: 1.7;
     font-size: 1rem;
     margin-bottom: auto;
+  }
+
+  .demo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .demo-link:hover {
+    opacity: 0.8;
   }
 
   .text-center {
